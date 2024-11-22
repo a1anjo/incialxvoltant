@@ -15283,3 +15283,34 @@ html[class*="ie"] .dtp-hour-hand {
 .dtp .right {
 	right: 20px;
 }
+
+/*Industries - Grid Styles*/
+.grid-container {
+	padding: 5rem 0rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+}
+
+.grid-item {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+	padding: 15px 20px;
+	text-align: center;
+	font-size: 16px;
+	color: #333;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	white-space: nowrap;
+}
+
+.grid-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
