@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 
 /*
@@ -13,59 +13,59 @@
 
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: "Oswald", sans-serif;
 	background-color: #f8f9fa;
-  }
-  
-  .section-title h2 {
+}
+
+.section-title h2 {
 	font-size: 2rem;
 	color: #4CAF50;
 	font-weight: bold;
 	margin-bottom: 1rem;
-  }
-  
-  .info {
+}
+
+.info {
 	background: #fff;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .info i {
+}
+
+.info i {
 	font-size: 1.5rem;
 	color: #4CAF50;
 	margin-right: 10px;
-  }
-  
-  .info h4 {
+}
+
+.info h4 {
 	font-size: 1.2rem;
 	color: #333;
 	margin-bottom: 0.5rem;
-  }
-  
-  .info p {
+}
+
+.info p {
 	font-size: 1rem;
 	color: #666;
-  }
-  
-  .map-embed {
+}
+
+.map-embed {
 	margin-top: 1rem;
 	border-radius: 8px;
-  }
-  
-  .php-email-form {
+}
+
+.php-email-form {
 	background: #fff;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .php-email-form .form-control {
+}
+
+.php-email-form .form-control {
 	border-radius: 6px;
 	border: 1px solid #ccc;
-  }
-  
-  .php-email-form button {
+}
+
+.php-email-form button {
 	background-color: #4CAF50;
 	color: #fff;
 	border: none;
@@ -73,12 +73,12 @@ body {
 	border-radius: 6px;
 	cursor: pointer;
 	transition: background-color 0.3s;
-  }
-  
-  .php-email-form button:hover {
+}
+
+.php-email-form button:hover {
 	background-color: #45a049;
-  }
-  
+}
+
 
 
 
@@ -176,7 +176,7 @@ html p a:hover {
 * Typography
 */
 body {
-	font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	font-weight: 400;

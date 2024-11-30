@@ -11,11 +11,14 @@
   <meta charset="utf-8">
   <!--<link rel="icon" href="images/favicon.ico" type="image/x-icon">-->
   <!-- Stylesheets-->
-  <link rel="stylesheet" type="text/css"
-    href="//fonts.googleapis.com/css?family=Lato:300i,400,400i,700%7CMontserrat:400,500,600,700%7CPlayfair+Display:400,700,700i%7COswald:400,700,700i">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
   <style>
     .ie-panel {
       display: none;
@@ -89,6 +92,28 @@
     </div>
   </header>
   <!-- Swiper-->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headings = document.querySelectorAll('.heading-decorate');
+      const colorThief = new ColorThief();
+
+      headings.forEach((heading) => {
+        const slideBg = heading.closest('.swiper-slide').querySelector('.slide-bg');
+        const img = new Image();
+        img.crossOrigin = 'Anonymous';
+        img.src = slideBg.style.backgroundImage.slice(5, -2);
+
+        img.onload = function () {
+          const dominantColor = colorThief.getColor(img);
+          const brightness = (dominantColor[0] * 299 + dominantColor[1] * 587 + dominantColor[2] * 114) / 1000;
+          const textColor = brightness > 125 ? 'black' : 'white';
+          heading.style.color = textColor;
+        };
+      });
+    });
+  </script>
+
+
   <section class="section swiper-container swiper-slider swiper-slider-1 slider-scale-effect" data-loop="false"
     data-autoplay="5500" data-simulate-touch="false" data-slide-effect="fade">
     <div class="swiper-wrapper">
@@ -199,19 +224,121 @@
         </div>
         <div class="col-lg-6 col-xl-5">
           <h2 class="heading-decorate">About Voltant Energy </h2>
-          <h5>Objective</h5>
-          <p class="big text-gray-800">A Sustainable Energy company  focussed on providing innovative products & 
-advanced technological solutions for industrial & commercial establishments:</p>
+          <!-- <h5>Objective</h5> -->
+          <p class="big text-gray-800">A Sustainable Energy company focussed on providing innovative products &
+            advanced technological solutions for industrial & commercial establishments:</p>
           <p class="text-spacing-60"> • To optimize the energy requirements to Cut down the Cost on Energy. </p>
-<p class="text-spacing-60">• To integrate the Available & Feasible Renewable Energy Sources to reduce impact on 
-environment and help companies achieve their sustainability goals. </p>
-<p class="text-spacing-60">• To optimize the process to Save Resources and improve profitability</p><a class="button button-primary" href="#">learn more</a>
+          <p class="text-spacing-60">• To integrate the Available & Feasible Renewable Energy Sources to reduce impact
+            on
+            environment and help companies achieve their sustainability goals. </p>
+          <p class="text-spacing-60">• To optimize the process to Save Resources and improve profitability</p><a
+            class="button button-primary" href="#">learn more</a>
         </div>
       </div>
     </div>
   </section>
-  <section class="section section-lg bg-default">
 
+  <section class="section section-lg bg-default">
+    <div class="container-fluid py-2">
+      <h2 class="text-center mb-4">Our Clients</h2>
+      <div class="slider" data-animation="true">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="McDonald's">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="Starbucks">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
+              alt="General Electric">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="NFL">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
+              alt="Mercedes-Benz">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="Hogwarts">
+          </div>
+          <!-- Duplicate logos for continuous animation -->
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/mcdonalds-black-logo.png" alt="McDonald's">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/images/large/2x/starbucks-logo-black-and-white.png" alt="Starbucks">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/general-electric-black-logo-png-transparent.png"
+              alt="General Electric">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/nfl-logo-png-transparent.png" alt="NFL">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/mercedes-benz-6-logo-png-transparent.png"
+              alt="Mercedes-Benz">
+          </div>
+          <div class="slide">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/hogwarts-logo-png-transparent.png" alt="Hogwarts">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .slider {
+      margin-top: 70px;
+      background-color: rgb(255, 255, 255);
+      padding: 4em 2em;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider .slide-track {
+      display: flex;
+      width: calc(250px * 14 * 2);
+      /* Adjust based on the number of logos 
+      Logo width * number of logos * 2
+      */
+    }
+
+    .slider[data-animation="true"] .slide-track {
+      animation: scroll 30s linear infinite;
+    }
+
+    .slider .slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 100px;
+    }
+
+    .slider img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-250px * 14));
+        /* Adjust based on the number of logos 
+        - Logo width * number of logos
+        */
+      }
+    }
+  </style>
+
+  <section class="section section-lg bg-default">
     <div class="container py-5">
       <h2 class="text-center mb-4">Our Services</h2>
       <div class="row text-center">
@@ -230,6 +357,43 @@ environment and help companies achieve their sustainability goals. </p>
         <div class="col-md-4">
           <img src="images/3.jpg.png" class="img-fluid mb-3" alt="Waste to Energy Solutions">
           <h5>Waste to Energy Solutions</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-lg bg-default">
+    <div class="container py-5">
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h3>Importance of Sustainability Initiatives</h3>
+          <p>Sustainability initiatives are crucial for preserving our environment and ensuring a better future for the
+            next generations. These initiatives help in reducing carbon footprints, conserving natural resources, and
+            promoting eco-friendly practices.</p>
+        </div>
+      </div>
+      <div class="row mb-4 justify-content-md-end">
+        <div class="col-md-6">
+          <h3>How Voltant Energy is Trying to Mitigate</h3>
+          <p>Voltant Energy is committed to mitigating environmental impact through innovative energy solutions. We
+            focus on renewable energy sources, energy efficiency, and sustainable practices to reduce our carbon
+            footprint and promote a greener future.</p>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h3>UN sustainability goals</h3>
+          <p>Sustainability initiatives are crucial for preserving our environment and ensuring a better future for the
+            next generations. These initiatives help in reducing carbon footprints, conserving natural resources, and
+            promoting eco-friendly practices.</p>
+        </div>
+      </div>
+      <div class="row mb-4 justify-content-md-end">
+        <div class="col-md-6">
+          <h3>UAE sustainable goals</h3>
+          <p>Voltant Energy is committed to mitigating environmental impact through innovative energy solutions. We
+            focus on renewable energy sources, energy efficiency, and sustainable practices to reduce our carbon
+            footprint and promote a greener future.</p>
         </div>
       </div>
     </div>
@@ -255,6 +419,54 @@ environment and help companies achieve their sustainability goals. </p>
       </div>
     </div>
   </section>
+
+  <style>
+    .custom-box {
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-width: 0;
+    }
+
+    .custom-box img {
+      border-radius: 15px;
+    }
+  </style>
+
+  <section class="section section-lg bg-default">
+    <div class="container py-5">
+      <div class="row">
+        <!-- First row with two boxes -->
+        <div class="col-md-6 mb-4 d-flex align-items-center justify-content-center" style="height: 300px;">
+          <div class="p-3 border custom-box d-flex align-items-center justify-content-center w-100 h-100">
+            <h3 class="text-center">MENA Market</h3>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4 d-flex align-items-center justify-content-center" style="height: 300px;">
+          <div class="border custom-box w-100 h-100" style="padding: 0;">
+            <img src="https://yavuzceliker.github.io/sample-images/image-1.jpg" class="img-fluid" alt="Sample Image"
+              style="height: 100%; width: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Second row with one full-width box -->
+        <div class="col-12">
+          <div class="p-3 border custom-box text-center"><br>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat modi consequatur voluptates similique
+              accusamus nulla mollitia, illo iure veniam reprehenderit sed provident dicta blanditiis quis ut tenetur
+              perferendis sequi cumque amet praesentium, delectus minima in. Doloribus, quas sit. <br><br> Nemo eum
+              asperiores
+              consectetur! Reprehenderit obcaecati et voluptates nemo. Aspernatur, quasi quidem iste suscipit, vero
+              recusandae numquam explicabo alias, veniam unde perferendis libero vel soluta. Vitae pariatur et
+              consequuntur odit magni! Quisquam asperiores dolor recusandae minus odit dignissimos accusantium delectus!
+              Quibusdam dolore corporis asperiores suscipit, ducimus error ex eos. Ex delectus animi labore, quis in cum
+              accusamus asperiores praesentium, dolorum tempora doloremque?<br><br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-md bg-default text-center">
     <div class="container">
       <h2>Industries</h2>
@@ -277,7 +489,7 @@ environment and help companies achieve their sustainability goals. </p>
       <div class="grid-item">Hospital & Healthcare</div>
       <div class="grid-item">Vegetable/Fruit & Fish/Meat Market</div>
     </div>
-   
+
     <!-- Page Footer<a class="banner" href="https://www.templatemonster.com/website-templates/monstroid2.html" target="_blank"><img src="images/monstroid-big.jpg" alt="" height="0"></a>-->
     <section class="section"></section>
     <!--Please, add the data attribute data-key="YOUR_API_KEY" in order to insert your own API key for the Google map.-->
